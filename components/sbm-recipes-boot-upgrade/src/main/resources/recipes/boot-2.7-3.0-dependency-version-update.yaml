@@ -31,11 +31,6 @@
        condition:
          type: org.springframework.sbm.boot.upgrade.common.conditions.BootHasAutoconfigurationCondition
 
-    - type: org.springframework.sbm.boot.upgrade_27_30.actions.Boot_27_30_UpgradeReplaceJohnzonDependencies
-      condition:
-        type: org.springframework.sbm.boot.upgrade_27_30.conditions.JohnzonDependencyCondition
-      description: Changing JohnzonDependency version and classifier
-
     - type: org.springframework.sbm.engine.recipe.OpenRewriteDeclarativeRecipeAdapter
       condition:
         type: org.springframework.sbm.boot.common.conditions.IsSpringBootProject
