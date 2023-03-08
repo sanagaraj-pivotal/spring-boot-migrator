@@ -16,10 +16,12 @@
 package org.springframework.sbm.boot.upgrade_27_30.report.helper;
 
 import org.springframework.sbm.boot.upgrade_27_30.report.SpringBootUpgradeReportSectionHelper;
+import org.springframework.sbm.build.api.Dependency;
 import org.springframework.sbm.engine.context.ProjectContext;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 /**
  * @author Fabian Krüger
@@ -33,7 +35,10 @@ public class JohnzonDependencyHelper extends SpringBootUpgradeReportSectionHelpe
 
     @Override
     public boolean evaluate(ProjectContext context) {
-        return true;
+
+        Optional<Dependency> d = context.getBuildFile().getDeclaredDependencies().stream()
+                .filter(x -> x.getCoordinates().contains("org.apache.johnzon:johnzon-core")).findFirst();
+        return d.isPresent();
     }
 
     @Override
