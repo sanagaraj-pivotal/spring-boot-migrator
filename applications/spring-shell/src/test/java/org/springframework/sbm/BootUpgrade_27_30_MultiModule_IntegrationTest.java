@@ -97,6 +97,17 @@ public class BootUpgrade_27_30_MultiModule_IntegrationTest  extends IntegrationT
                         "    restclient.sniffer.delay-after-failure: '3'\n" +
                         "    restclient.sniffer.interval: '4'\n" +
                         "    username: username\n" +
+                        "  cassandra:\n" +
+                        "    keyspaceName: testKeySpace\n" +
+                        "    contactPoints: localhost\n" +
+                        "    port: 9042\n" +
+                        "    username: testusername\n" +
+                        "    schemaAction: NONE\n" +
+                        "    request:\n" +
+                        "      timeout: 10s\n" +
+                        "    connection:\n" +
+                        "      connectTimeout: 10s\n" +
+                        "      initQueryTimeout: 10s\n" +
                         "  elasticsearch.connection-timeout: '1000'\n" +
                         "  elasticsearch.webclient.max-in-memory-size: '122'\n" +
                         "  elasticsearch.password: abc\n" +

@@ -104,6 +104,7 @@
 
         - title: Prepare for Spring 3.0 dependency
           helper: org.springframework.sbm.boot.upgrade_27_30.report.helper.IsSpring27Or30ProjectHelper
+
           change: |-
             Some of the dependencies artifacts are removed/deprecated/moved to new co ordinates, this automated recipe helps prepare SBM to migrate
           affected: |-
