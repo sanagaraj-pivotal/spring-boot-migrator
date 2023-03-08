@@ -15,7 +15,6 @@
  */
 package org.springframework.sbm.boot.upgrade_27_30.report.helper;
 
-import org.springframework.sbm.boot.common.conditions.IsSpringBootProject;
 import org.springframework.sbm.boot.upgrade_27_30.report.SpringBootUpgradeReportSectionHelper;
 import org.springframework.sbm.engine.context.ProjectContext;
 
@@ -25,9 +24,8 @@ import java.util.Map;
 /**
  * @author Fabian Krüger
  */
-public class HasJohnzonDependencyProjectHelper extends SpringBootUpgradeReportSectionHelper<List<String>> {
+public class JohnzonDependencyHelper extends SpringBootUpgradeReportSectionHelper<List<String>> {
 
-    public static final String VERSION_PATTERN = "(2\\.7\\..*)|(3\\.0\\..*)";
     @Override
     public String getDescription() {
         return "";
@@ -35,20 +33,11 @@ public class HasJohnzonDependencyProjectHelper extends SpringBootUpgradeReportSe
 
     @Override
     public boolean evaluate(ProjectContext context) {
-        IsSpringBootProject isSpringBootProject = new IsSpringBootProject();
-        isSpringBootProject.setVersionPattern(VERSION_PATTERN);
-        boolean isSpringBootApplication = isSpringBootProject.evaluate(context);
-        if(!isSpringBootApplication) {
-            return false;
-        }
-
-        // FIXME: dummy
         return true;
     }
 
     @Override
     public Map<String, List<String>> getData() {
-        // FIXME: dummy
-        return Map.of("ehcache", List.of("org.ehcache:ehcache:3.10.0"));
+        return Map.of();
     }
 }
