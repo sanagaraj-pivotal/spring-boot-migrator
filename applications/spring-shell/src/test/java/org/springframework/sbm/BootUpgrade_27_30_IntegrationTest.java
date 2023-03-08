@@ -53,7 +53,7 @@ public class BootUpgrade_27_30_IntegrationTest extends IntegrationTestBaseClass 
         applyRecipe("sbu30-auto-configuration");
         applyRecipe("sbu30-225-logging-date-format");
         applyRecipe("sbu30-migrate-spring-data-properties");
-        applyRecipe("sbu30-inherit-crud-repository");
+        applyRecipe("sbu30-paging-and-sorting-repository");
 
         buildProject();
         verifyParentPomVersion();
