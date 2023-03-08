@@ -131,6 +131,22 @@
           contributors:
             - "Fabian Krüger[@fabapp2]"
 
+        - title: Add version number to johnzon-core dependency
+          helper: org.springframework.sbm.boot.upgrade_27_30.report.helper.UpgradeDependenciesHelper
+          change: |-
+            Some of the dependencies artifacts are removed/deprecated/moved to new co ordinates, this automated recipe helps prepare SBM to migrate
+          affected: |-
+            *
+          remediation:
+            description: |-
+              * adds ehcache classifier
+              * auto corrects right co ordinates of wiremock if used
+            recipe: sbu30-upgrade-dependencies
+          contributors:
+            - "Fabian Krüger[@fabapp2]"
+
+
+
         - title: Upgrade to Jakarta EE 10
           helper: org.springframework.sbm.boot.upgrade_27_30.report.helper.UpgradeSpringBootVersionHelper
           change: |-
